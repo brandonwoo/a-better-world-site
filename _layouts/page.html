@@ -1,14 +1,20 @@
 ---
 layout: default
 ---
-<div class="post">
+<section class="hero diagonal">
+	<div class="container" {% if page.full_width %}style="max-width: 100%"{% endif %}>
+		{% if page.heading %}
+			<h2>{{ page.heading }}</h2>
+		{% elsif page.title %}
+			<h2>{{ page.title }}</h2>
+		{% endif %}
+		{% if page.subtitle %}
+			<p class="subtext">{{ page.subtitle }}</p>
+		{% endif %}
+		{% if page.show_email_to %}
+		<p><a class="button alt email-link" href="mailto:enquiries@abetterworld.ltd">enquiries@abetterworld.ltd</a></p>
+		{% endif %}
+	</div>
+</section>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
-</div>
+{{ content }}
